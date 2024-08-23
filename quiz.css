@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+#answer {
+  background-color: rgba(255, 193, 7, 0.25) !important;
+  color: black;
+}
+.form-control:focus {
+  border-color: rgba(255, 193, 7, 0.5)!important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25) !important;
+}
+.form-control {
+  border-color: #ffc107 !important;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("https://www.connaissancedesarts.com/wp-content/thumbnails/uploads/2021/10/cda21_article_actu_squid_game_inspiration_artistique_serie_netflix-tt-width-1200-height-630-fill-0-crop-1-bgcolor-ffffff.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardGlob {
+  max-width: 770px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(80px);
+  color: #fff;
+  margin: 70px auto 0;
+  border-radius: 20px;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 200px 36px;
+  perspective: 2500px;
+  position: relative;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  left: 0;
+}
+
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+p {
+  max-width: 370px;
+  color: bisque;
+  text-align: start;
+}
